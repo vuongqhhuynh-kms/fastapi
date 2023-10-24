@@ -6,7 +6,7 @@ import dotenv
 import yaml
 from fastapi import FastAPI, HTTPException
 import datetime
-import mysql.connector
+from typing import List
 from pydantic import BaseModel, Field
 import utils
 
@@ -45,7 +45,7 @@ class LearningWord(BaseModel):
           The Word must include the IPA, meaning, example sentences, synonyms, antonyms, collocations, word family, and complexity (1-5).
           If any information is missing in the content, you will supplement it using your own knowledge.
           """)
-def learn_new_word(learningWords: list[LearningWord], request: Request = None):
+def learn_new_word(learningWords: List[LearningWord], request: Request = None):
     access_key, access_user = get_access_credentials(request)
     try:
         data = learningWords
