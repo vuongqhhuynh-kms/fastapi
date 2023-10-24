@@ -1,2 +1,11 @@
-fastapi==0.100.0
-hypercorn==0.14.4
+hypercorn
+epitran
+textblob
+translate
+gtts
+pygame
+mysql-connector-python
+python-dotenv
+uvicorn
+pyyaml
+python-multipart
